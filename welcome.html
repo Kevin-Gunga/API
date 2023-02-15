@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>welcome</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <div class="wel">
+        <h1>DATA FROM PREVIOUS PAGE</h1>
+        <div class="statements">
+            <div id="welcome">Welcome:<span id="first-name"></span></div>
+            <div id="welcome">Your registration number is:<span id="reg-number"></span></div>
+            <div id="welcome">You are:<span id="age-number"></span>years old.</div>
+        </div>
+    </div>
+    <script>
+        const firstName = localStorage.getItem('first-name');
+        const regNumber = localStorage.getItem('reg-number');
+        const ageNumber = localStorage.getItem('age-number');
+
+        document.getElementById('first-name').textContent = firstName;
+        document.getElementById('reg-number').textContent = regNumber;
+        document.getElementById('age-number').textContent = ageNumber;
+    </script>
+</body>
+
+</html>

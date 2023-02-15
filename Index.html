@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Index</title>
+    <link rel="stylesheet" href="style.css">
+
+</head>
+
+<body>
+    <div class="form">
+        <h1>DEAR STUDENT FILL HERE</h1>
+        <form id="form">
+            <div class="div">
+                <label for="firstName">First name</label>
+                <input id="firstName" type="text" placeholder="Enter your first name"><br><br>
+                <label for="regNumber">Reg number</label>
+                <input id="regNumber" type="text" placeholder="Enter your reg number"><br><br>
+                <label for="ageNumber">Age</label>
+                <input id="ageNumber" type="number" min="1" placeholder="Enter  your age"><br><br>
+            </div>
+            <button id="btn" type="submit">Submit</button>
+        </form>
+    </div>
+    <script>
+        const form = document.getElementById('form');
+        const firstName = document.getElementById('firstName');
+        const regNumber = document.getElementById('regNumber');
+        const ageNumber = document.getElementById('ageNumber');
+
+        form.addEventListener('submit', function(e) {
+            e.preventDefault();
+
+            const firstNameValue = firstName.value;
+            const regNumberValue = regNumber.value;
+            const ageNumberValue = ageNumber.value;
+
+            localStorage.setItem('first-name', firstNameValue);
+            localStorage.setItem('reg-number', regNumberValue);
+            localStorage.setItem('age-number', ageNumberValue);
+
+            window.location.href = "welcome.html";
+        })
+    </script>
+
+</body>
+
+</html>
